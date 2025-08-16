@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { NavbarComponent } from './_components/navbar/navbar.component';
 import { PrimaryButtonComponent } from './_components/primary-button/primary-button.component';
 import { SecundaryButtonComponent } from "./_components/secundary-button/secundary-button.component";
+import { CertificateItemComponent } from "./_components/certificate-item/certificate-item.component";
 
 @Component({
   selector: 'app-root',
-  imports: [NavbarComponent, PrimaryButtonComponent, SecundaryButtonComponent],
+  imports: [NavbarComponent, PrimaryButtonComponent, SecundaryButtonComponent, CertificateItemComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
