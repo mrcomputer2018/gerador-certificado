@@ -5,13 +5,15 @@ import { SecundaryButtonComponent } from './_components/secundary-button/secunda
 import { CertificateItemComponent } from './_components/certificate-item/certificate-item.component';
 import { UiBaseComponent } from './_components/ui-base/ui-base.component';
 import { CertificatesComponent } from "./pages/certificates/certificates.component";
+import { CertificateFormComponent } from "./pages/certificate-form/certificate-form.component";
 
 @Component({
     selector: 'app-root',
     imports: [
     NavbarComponent,
     UiBaseComponent,
-    CertificatesComponent
+    CertificatesComponent,
+    CertificateFormComponent
 ],
     templateUrl: './app.component.html',
 })

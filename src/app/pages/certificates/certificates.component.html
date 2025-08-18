@@ -6,18 +6,28 @@
 
     <div class="card border border-gray-300 max-w-168 py-16 px-8 mx-auto">
         <div class="card-body flex flex-col justify-center">
-            <div class="mb-5 flex justify-center">
-                <i
-                    class="ph ph-[certificate] w-12 h-12 text-[#64748B] font-semibold"
-                ></i>
-            </div>
-            <div class="text-center mb-5">
-                <h2 class="font-bold tex-[#1A2856]">Nenhum certificado gerado</h2>
-                <small class="text-sm text-[#64748B]">Gere certificados para consultar o histórico</small>
-            </div>
-            <div class="flex justify-center">
-                <app-secundary-button label="Gerar certificado" />
-            </div>
+            @if(!existsCetificate) {
+                <div class="mb-5 flex justify-center">
+                    <i
+                        class="ph ph-[certificate] w-12 h-12 text-[#64748B] font-semibold"
+                    ></i>
+                </div>
+                <div class="text-center mb-5">
+                    <h3 class="font-bold text-sm text-[#1A2856]">
+                        Nenhum certificado gerado
+                    </h3>
+                    <small class="text-xs text-[#64748B]"
+                        >Gere certificados para consultar o histórico.</small
+                    >
+                </div>
+                <div class="flex justify-center">
+                    <app-secundary-button label="Gerar certificado" />
+                </div>
+            }
+            @else {
+                <app-certificate-item name="Marcelo Ribeiro" date="17/08/2025"/>
+                <app-certificate-item name="Marcelo Ribeiro" date="17/08/2025"/>
+            }
         </div>
     </div>
 </div>
