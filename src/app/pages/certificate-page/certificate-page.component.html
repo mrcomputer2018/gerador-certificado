@@ -1,12 +1,46 @@
-<section class="max-w-200 mx-auto">
+<section class="max-w-220 mx-auto">
     <div class="flex flex-row justify-between items-centermb-4">
-        <a href="#" class="text-sm flex flex-row items-center text-[#1A2856] hover:text-[#0d1a3b] transition duration-300">
+        <a
+            href="#"
+            class="text-sm flex flex-row items-center text-[#1A2856] hover:text-[#0d1a3b] transition duration-300"
+        >
             <i class="ph ph-[arrow-left] w-4 h-4 inline-block mr-2"></i>
             Voltar
         </a>
-        <app-secundary-button label="Download" icon="ph-[download]"/>
+        <app-secundary-button label="Download" icon="ph-[download]" />
     </div>
-    <div class="mt-8 w-220 h-[550px] bg-cover rounded-xl bg-certificate">
-
+    <div
+        class="mt-8 w-220 h-[550px] bg-cover rounded-xl bg-certificate flex items-center justify-center"
+    >
+        <div class="w-[780px] h-[470px] bg-white rounded-lg relative">
+            <img
+                src="/certificate/certificate_ribbon.png"
+                alt="Certificate-ribbon"
+                class="object-cover absolute top-[-25px] left-[-30px]"
+            />
+            <div class="mt-[64px] mr-10 ml-10 mb-auto">
+                <div class="text-center">
+                    <div>
+                        <h1
+                            class="text-2xl font-extrabold uppercase tracking-[2px] text-[#1A2856]"
+                        >
+                            Certificado de conclusão
+                        </h1>
+                        <p class="text-[#121621]">Este certificado comprova que</p>
+                    </div>
+                    <p class="text-6xl my-7 font-bold text-[#121621]">João Carlos Lopes</p>
+                    <div class="w-[414px] mx-auto">
+                        <p class="text-xs mb-4 text-[#121621]">concluiu com sucesso as seguintes atividades:</p>
+                        <p class="text-sm text-[#121621]">
+                            Introdução ao Angular, Configuração com Angular CLI,
+                            Criação de componentes reutilizáveis, Manipulação de
+                            dados, Implementação de data binding, Criação de
+                            rotas com Angular Router, Consumo de APIs REST
+                        </p>
+                    </div>
+                    <p>Emitido em <span class="font-bold">01/01/2026</span></p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
