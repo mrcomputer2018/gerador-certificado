@@ -26,15 +26,8 @@
                     class="border border-gray-200 px-3 py-2 h-10 rounded-md text-[16px] text-gray-700 focus:ring-[#3B5AC2]"
                 />
                 <div>
-                    @if (nameRef.invalid && nameRef.touched) {
-                        <small class="text-xs text-red-500 flex items-center">
-                            <i
-                                class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
-                            ></i>
-                           O nome do aluno é obrigatório!!!
-                        </small>
-                        }
-                    @if (nameRef.errors?.["required"]) {
+                    @if (nameRef.errors?.["required"] && nameRef.invalid &&
+                    nameRef.touched) {
                     <small class="text-xs text-red-500 flex items-center">
                         <i
                             class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
@@ -42,14 +35,6 @@
                         O nome do aluno é obrigatório!!!
                     </small>
                     }
-                    @if (nameRef.errors?.["maxlength"]) {
-                        <small class="text-xs text-red-500 flex items-center">
-                            <i
-                                class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
-                            ></i>
-                            A atividade deve ter no máximo 150 caracteres!!!
-                        </small>
-                        }
                 </div>
             </div>
             <div class="mb-3 flex flex-row items-end gap-2">
@@ -75,30 +60,13 @@
                         class="peer border border-gray-200 px-3 py-2 h-10 rounded-md text-[16px] text-gray-700 focus:ring-[#3B5AC2]"
                     />
                     <div>
-                         @if (activityRef.invalid && activityRef.touched) {
+                        @if (activityRef.errors?.["required"] &&
+                        activityRef.invalid && activityRef.touched) {
                         <small class="text-xs text-red-500 flex items-center">
                             <i
                                 class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
                             ></i>
                             A atividade é obrigatória!!!
-                        </small>
-                        }
-
-                        @if (activityRef.errors?.["required"]) {
-                        <small class="text-xs text-red-500 flex items-center">
-                            <i
-                                class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
-                            ></i>
-                            A atividade é obrigatória!!!
-                        </small>
-                        }
-
-                        @if (activityRef.errors?.["maxlength"]) {
-                        <small class="text-xs text-red-500 flex items-center">
-                            <i
-                                class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
-                            ></i>
-                            A atividade deve ter no máximo 50 caracteres!!!
                         </small>
                         }
                     </div>
