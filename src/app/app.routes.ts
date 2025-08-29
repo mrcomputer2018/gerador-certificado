@@ -3,25 +3,4 @@ import { CertificatesComponent } from './pages/certificates/certificates.compone
 import { CertificateFormComponent } from './pages/certificate-form/certificate-form.component';
 import { CertificatePageComponent } from './pages/certificate-page/certificate-page.component';
 
-export const routes: Routes = [
-    {
-        path: '',
-        component: CertificatesComponent,
-    },
-    {
-        path: 'certificates',
-        component: CertificatesComponent,
-    },
-    {
-        path: 'certificate-form',
-        component: CertificateFormComponent,
-    },
-    {
-        path: 'certificate-page',
-        component: CertificatePageComponent,
-    },
-    {
-        path: '**',
-        component: CertificatesComponent,
-    },
-];
+export const routes: Routes = [];
