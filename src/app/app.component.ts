@@ -1,26 +1,15 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from './_components/navbar/navbar.component';
-import { PrimaryButtonComponent } from './_components/primary-button/primary-button.component';
-import { SecundaryButtonComponent } from './_components/secundary-button/secundary-button.component';
-import { CertificateItemComponent } from './_components/certificate-item/certificate-item.component';
 import { UiBaseComponent } from './_components/ui-base/ui-base.component';
-import { CertificatesComponent } from "./pages/certificates/certificates.component";
-import { CertificateFormComponent } from "./pages/certificate-form/certificate-form.component";
-import { CertificatePageComponent } from "./pages/certificate-page/certificate-page.component";
+import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-root',
-    imports: [
-    NavbarComponent,
-    UiBaseComponent,
-    CertificatesComponent,
-    CertificateFormComponent,
-    CertificatePageComponent
-],
+    imports: [NavbarComponent, UiBaseComponent, RouterOutlet],
     templateUrl: './app.component.html',
 })
 export class AppComponent {
     title = 'gerador-certificado';
 
-    displayNavbar: boolean = false;
+    displayNavbar: boolean = true;
 }
