@@ -3,12 +3,15 @@ import { PageTitleComponent } from '../../_components/page-title/page-title.comp
 import { PrimaryButtonComponent } from "../../_components/primary-button/primary-button.component";
 import { SecundaryButtonComponent } from "../../_components/secundary-button/secundary-button.component";
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-certificate-form',
-    imports: [PageTitleComponent, PrimaryButtonComponent, SecundaryButtonComponent, CommonModule],
+    imports: [PageTitleComponent, PrimaryButtonComponent, SecundaryButtonComponent, CommonModule, FormsModule],
     templateUrl: './certificate-form.component.html',
 })
 export class CertificateFormComponent {
     hasError: boolean = false;
+    name: string = '';
+    activity: string = '';
 }
