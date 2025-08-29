@@ -9,5 +9,5 @@ import { CertificateItemComponent } from "../../_components/certificate-item/cer
     templateUrl: './certificates.component.html',
 })
 export class CertificatesComponent {
-    existsCetificate:boolean = true
+    existsCertificate: boolean = true
 }
