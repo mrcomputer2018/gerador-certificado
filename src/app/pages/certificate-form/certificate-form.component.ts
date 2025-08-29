@@ -14,4 +14,5 @@ export class CertificateFormComponent {
     hasError: boolean = false;
     name: string = '';
     activity: string = '';
+    activityList: string[] = [];
 }
