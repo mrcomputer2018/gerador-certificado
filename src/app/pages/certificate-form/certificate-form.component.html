@@ -11,7 +11,13 @@
             </h2>
 
             <div class="mb-3 flex flex-col gap-2">
-                <label for="name" class="text-sm text-[#1A2856]"
+                <label
+                    for="name"
+                    [ngClass]="{
+                        'text-red-500': validateForm(nameRef),
+                        'text-[#1A2856] peer-focus:text-[#3B5AC2] transition-colors':
+                            !validateForm(nameRef)
+                    }"
                     >Nome completo</label
                 >
                 <input
@@ -26,8 +32,7 @@
                     class="border border-gray-200 px-3 py-2 h-10 rounded-md text-[16px] text-gray-700 focus:ring-[#3B5AC2]"
                 />
                 <div>
-                    @if (nameRef.errors?.["required"] && nameRef.invalid &&
-                    nameRef.touched) {
+                    @if (validateForm(nameRef)) {
                     <small class="text-xs text-red-500 flex items-center">
                         <i
                             class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
@@ -42,9 +47,9 @@
                     <label
                         for="Activity"
                         [ngClass]="{
-                            'text-red-500': hasError,
+                            'text-red-500': validateForm(activityRef),
                             'text-[#1A2856] peer-focus:text-[#3B5AC2] transition-colors':
-                                !hasError
+                                !validateForm(activityRef)
                         }"
                         >Atividade</label
                     >
@@ -60,8 +65,7 @@
                         class="peer border border-gray-200 px-3 py-2 h-10 rounded-md text-[16px] text-gray-700 focus:ring-[#3B5AC2]"
                     />
                     <div>
-                        @if (activityRef.errors?.["required"] &&
-                        activityRef.invalid && activityRef.touched) {
+                        @if (validateForm(activityRef)) {
                         <small class="text-xs text-red-500 flex items-center">
                             <i
                                 class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"

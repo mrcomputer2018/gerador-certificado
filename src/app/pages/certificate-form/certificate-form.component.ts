@@ -3,7 +3,7 @@ import { PageTitleComponent } from '../../_components/page-title/page-title.comp
 import { PrimaryButtonComponent } from "../../_components/primary-button/primary-button.component";
 import { SecundaryButtonComponent } from "../../_components/secundary-button/secundary-button.component";
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgModel } from '@angular/forms';
 
 @Component({
     selector: 'app-certificate-form',
@@ -15,4 +15,8 @@ export class CertificateFormComponent {
     name: string = '';
     activity: string = '';
     activityList: string[] = ["Configuração com Angular CLI", "Introdução ao TypeScript", "Componentes e Templates" ];
+
+    validateForm(control: NgModel) {
+        return control.invalid && control.touched;
+    }
 }
