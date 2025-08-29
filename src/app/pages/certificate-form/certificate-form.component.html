@@ -1,4 +1,4 @@
-<div>
+<form novalidate #form="ngForm">
     <app-page-title
         title="Geração de certificado"
         subtitle="Preencha os dados para gerar um novo certificado."
@@ -15,13 +15,42 @@
                     >Nome completo</label
                 >
                 <input
-                [(ngModel)]="name"
+                    [(ngModel)]="name"
+                    #nameRef="ngModel"
+                    maxlength="150"
+                    required
                     type="text"
                     id="name"
                     name="name"
                     placeholder="digite o nome do aluno..."
                     class="border border-gray-200 px-3 py-2 h-10 rounded-md text-[16px] text-gray-700 focus:ring-[#3B5AC2]"
                 />
+                <div>
+                    @if (nameRef.invalid && nameRef.touched) {
+                        <small class="text-xs text-red-500 flex items-center">
+                            <i
+                                class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
+                            ></i>
+                           O nome do aluno é obrigatório!!!
+                        </small>
+                        }
+                    @if (nameRef.errors?.["required"]) {
+                    <small class="text-xs text-red-500 flex items-center">
+                        <i
+                            class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
+                        ></i>
+                        O nome do aluno é obrigatório!!!
+                    </small>
+                    }
+                    @if (nameRef.errors?.["maxlength"]) {
+                        <small class="text-xs text-red-500 flex items-center">
+                            <i
+                                class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
+                            ></i>
+                            A atividade deve ter no máximo 150 caracteres!!!
+                        </small>
+                        }
+                </div>
             </div>
             <div class="mb-3 flex flex-row items-end gap-2">
                 <div class="flex flex-col flex-1 gap-1 mr-9">
@@ -36,19 +65,40 @@
                     >
                     <input
                         [(ngModel)]="activity"
+                        #activityRef="ngModel"
+                        maxlength="50"
+                        required
                         type="text"
-                        id="Activity"
-                        name="Activity"
+                        id="activity"
+                        name="activity"
                         placeholder="digite a atividade exercida..."
                         class="peer border border-gray-200 px-3 py-2 h-10 rounded-md text-[16px] text-gray-700 focus:ring-[#3B5AC2]"
                     />
                     <div>
-                        @if (hasError) {
+                         @if (activityRef.invalid && activityRef.touched) {
                         <small class="text-xs text-red-500 flex items-center">
                             <i
                                 class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
                             ></i>
-                            Error message
+                            A atividade é obrigatória!!!
+                        </small>
+                        }
+
+                        @if (activityRef.errors?.["required"]) {
+                        <small class="text-xs text-red-500 flex items-center">
+                            <i
+                                class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
+                            ></i>
+                            A atividade é obrigatória!!!
+                        </small>
+                        }
+
+                        @if (activityRef.errors?.["maxlength"]) {
+                        <small class="text-xs text-red-500 flex items-center">
+                            <i
+                                class="ph ph-[warning-circle] w-4 h-4 inline-block mr-2 text-red-500"
+                            ></i>
+                            A atividade deve ter no máximo 50 caracteres!!!
                         </small>
                         }
                     </div>
@@ -63,30 +113,22 @@
                     >Lista de atividades</label
                 >
                 <div class="border border-gray-200 p-4 rounded-lg w-full">
+                    @for (item of activityList; track $index) {
                     <div class="flex flex-row justify-between items-center">
-                        <span>Configuração com Angular CLI</span>
+                        <span>{{ item }}</span>
                         <i
                             class="ph ph-[x] w-5 h-5 p-1.5 text-red-500 rounded-md hover:bg-gray-300 cursor-pointer"
                         ></i>
                     </div>
+                    @if($index + 1 === activityList.length){
+                    <div></div>
+                    } @else {
                     <hr class="border border-gray-200 my-4" />
-                    <div class="flex flex-row justify-between items-center">
-                        <span>Configuração com Angular CLI</span>
-                        <i
-                            class="ph ph-[x] w-5 h-5 p-1.5 text-red-500 rounded-md hover:bg-gray-300 cursor-pointer"
-                        ></i>
-                    </div>
-                    <hr class="border border-gray-200 my-4" />
-                    <div class="flex flex-row justify-between items-center">
-                        <span>Configuração com Angular CLI</span>
-                        <i
-                            class="ph ph-[x] w-5 h-5 p-1.5 text-red-500 rounded-md hover:bg-gray-300 cursor-pointer"
-                        ></i>
-                    </div>
+                    } }
                 </div>
             </div>
 
             <app-primary-button label="Gerar certificado" />
         </div>
     </div>
-</div>
+</form>

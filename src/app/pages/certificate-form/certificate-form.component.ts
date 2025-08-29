@@ -14,5 +14,5 @@ export class CertificateFormComponent {
     hasError: boolean = false;
     name: string = '';
     activity: string = '';
-    activityList: string[] = [];
+    activityList: string[] = ["Configuração com Angular CLI", "Introdução ao TypeScript", "Componentes e Templates" ];
 }
